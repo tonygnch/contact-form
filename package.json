@@ -16,9 +16,7 @@
         "sass": "^1.32.11",
         "tailwindcss": "^3.1.8",
         "vite": "^3.0.0",
-        "vue": "^3.2.37"
-    },
-    "dependencies": {
+        "vue": "^3.2.37",
         "vue-toastification": "^2.0.0-rc.5"
     }
 }
