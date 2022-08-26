@@ -31,9 +31,6 @@
             content: String, 
             contactsRoute: String,
             contactsButtonTitle: String,
-        },
-        mounted() {
-
         }
     }
 </script>

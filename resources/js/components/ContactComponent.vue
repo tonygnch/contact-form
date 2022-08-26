@@ -6,7 +6,7 @@
                     <div class="card-header" v-text="title"></div>
                     <div class="card-body">
                         <form v-on:submit.prevent="submitInquiry">
-                            <div class="flex flex-wrap -mx-3 mb-6">
+                            <div class="flex flex-wrap -mx-3 md:mb-6">
                                 <div class="w-full px-3 mb-6 md:mb-0">
                                     <label class="mb-2" for="name">
                                         Name
@@ -26,7 +26,7 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="flex flex-wrap -mx-3 mb-6">
+                            <div class="flex flex-wrap -mx-3 md:mb-6">
                                 <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                                     <label class="mb-2" for="email">
                                         Email
@@ -106,7 +106,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 import { useToast } from "vue-toastification";
 
 export default {
@@ -173,11 +172,7 @@ export default {
                 // Hide loading spinner
                 this.loading = false;
             }
-        },
-    },
-
-    mounted() {
-
+        }
     }
 }
 </script>
