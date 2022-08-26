@@ -3,11 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
+use App\Http\Resources\InquiryResource;
 use App\Models\Inquiry;
 use App\Notifications\InquiryEmailNotification;
 use App\Notifications\UserEmailNotification;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Database\Eloquent\InvalidCastException;
+use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
+use InvalidArgumentException;
 
 class ContactController extends Controller
 {
@@ -21,7 +26,7 @@ class ContactController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Show the contact page.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -30,6 +35,12 @@ class ContactController extends Controller
         return view('contact');
     }
 
+    /**
+     * Store inquiry
+     * 
+     * @param ContactRequest $request 
+     * @return JsonResponse 
+     */
     public function store(ContactRequest $request)
     {
         # Create new model
@@ -50,8 +61,10 @@ class ContactController extends Controller
         # Send notiication to inquiry user
         $inquiry->notify(new InquiryEmailNotification());
 
+        # Return json response
         return response()->json([
-            'status' => 'ok'
+            'status' => 'ok',
+            'data' => new InquiryResource($inquiry)
         ]);
     }
 }
