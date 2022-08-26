@@ -10,7 +10,11 @@ import HomeComponent from './components/HomeComponent.vue';
 const app = createApp({});
 
 // Add Toastification
-app.use(Toast);
+app.use(Toast, {
+    position: 'top-center',
+    closeButton: false,
+    transition: "Vue-Toastification__fade",
+});
 
 // Register components
 app.component('contact-component', ContactComponent);
