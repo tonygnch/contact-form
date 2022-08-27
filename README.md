@@ -4,6 +4,8 @@ This is an interview task.
 
 You can see the result on this domain https://ganchev.click or by clicking [here](https://ganchev.click).
 
+Receiving email messages from [admin@ganchev.click](mailto:admin@ganchev.click) - Notice that they may go to Spam folder.
+
 ---
 
 ## Local setup
